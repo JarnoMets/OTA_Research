@@ -22,14 +22,14 @@ Writing pieces of software whenever needed.
 ## 1.1. Plan
 
   - Find the specific goal and constraints of the needed software.
-  - Look within Verhaert for implimentations already in use.
+  - Look within Verhaert for implementations already in use.
   - Scour the internet for existing solutions
   - Get a solution to work in a prototype
   - Refine the prototype to a complete demonstration
   - Document the entire process (Will be done throughout the entire project)
 
 ---
-
+  
 ## 1.2. Goals
 
 ### 1.2.1. ESP32
@@ -53,7 +53,7 @@ Writing pieces of software whenever needed.
 ### 1.3.1. ESP32
 
   - [FreeRTOS Delta OTA](https://www.freertos.org/2022/01/delta-over-the-air-updates.html)
-      - Uses [AWS IoT AWS lib](https://github.com/aws/ota-for-aws-iot-embedded-sdk)
+      - Uses [AWS IoT AWS library](https://github.com/aws/ota-for-aws-iot-embedded-sdk)
       - Overview: 
       - Process:  
         ![Firmware update process](assets/imgs/firmware-update-process.png)
