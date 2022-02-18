@@ -18,7 +18,7 @@
 
 # 1. Introduction
 
-The goal of the project is to have a way to "easily" update ioT devices over the air.
+The goal of the project is to find a way to "easily" update ioT devices over the air.
 These methods should be as platform independent as possible and reusable whenever possible.
 I will be looking for already existing methods to do so.
 Writing pieces of software whenever needed.
@@ -27,10 +27,10 @@ Writing pieces of software whenever needed.
 
 ## 1.1. Plan
 
-  - Find the specific goal and constraints of the needed software.
   - Look within Verhaert for implementations already in use.
   - Scour the internet for existing solutions
   - Get a solution to work in a prototype
+  - Compare the solutions to one another
   - Refine the prototype to a complete demonstration
   - Document the entire process (Will be done throughout the entire project)
 
@@ -96,7 +96,12 @@ Writing pieces of software whenever needed.
 
   - Overview 
   - Advantages:
+    - Very simple
   - Disadvantages:
+    - You need to include the OTA code with the program each time.  
+    - If OTA code is forgotten you can't update over the air anymore.
+    - Require's the use of the arduino IDE
+    - Most likely requires the use of the arduino framework.
   - Conclusion:
   - [Demo]()
 </details>
