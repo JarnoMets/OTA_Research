@@ -7,7 +7,8 @@
     - [1.3.1. ESP32](#131-esp32)
     - [1.3.1.1. FreeRTOS Delta OTA](#1311-freertos-delta-ota)
     - [1.3.1.2 Espressif OTA](#1312-espressif-ota)
-    - [1.3.1.3  Web Updater Arduino IDE](#1313--web-updater-arduino-ide)
+    - [1.3.1.3 Azure RTOS OTA](#1313-azure-rtos-ota)
+    - [1.3.1.4  Web Updater Arduino IDE](#1314--web-updater-arduino-ide)
     - [1.3.2. Embedded Linux](#132-embedded-linux)
     - [1.3.2.1 Mender](#1321-mender)
     - [1.3.2.2 SWUpdate](#1322-swupdate)
@@ -90,19 +91,38 @@ Writing pieces of software whenever needed.
   - [Demo]()
 </details>
 
-### 1.3.1.3  [Web Updater Arduino IDE](https://randomnerdtutorials.com/esp32-over-the-air-ota-programming/)
+### 1.3.1.3 [Azure RTOS OTA](https://docs.microsoft.com/en-us/azure/iot-hub-device-update/understand-device-update)
 <details>
   <summary></summary>
 
   - Overview 
+  - Advantages:
+    - Well organized
+    - Azure back-end can be used for many client frameworks
+    - Easy to implement
+    - Not a black box, the C-code is available
+  - Disadvantages:
+    - Not implemented for ESP32 yet
+  - Conclusion:
+  - [Demo]()
+</details>
+
+### 1.3.1.4  [Web Updater Arduino IDE](https://randomnerdtutorials.com/esp32-over-the-air-ota-programming/)
+<details>
+  <summary></summary>
+
+  - Overview:
+    - Arduino's IDE built in OTA updater.
   - Advantages:
     - Very simple
   - Disadvantages:
     - You need to include the OTA code with the program each time.  
     - If OTA code is forgotten you can't update over the air anymore.
     - Require's the use of the arduino IDE
-    - Most likely requires the use of the arduino framework.
+    - Requires the use of the arduino framework.
+    - Hard to impossible to automate
   - Conclusion:
+    - While easy to implement, the limitations of the Arduino framework and IDE make this more suited for hobbyist use, rather than an enterprise solution. 
   - [Demo]()
 </details>
 
