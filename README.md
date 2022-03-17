@@ -3,19 +3,20 @@
   - [1.2. Goals](#12-goals)
     - [1.2.1. ESP32](#121-esp32)
     - [1.2.2. Embedded Linux](#122-embedded-linux)
-  - [1.3. Methods Discovered](#13-methods-discovered)
-    - [1.3.1. ESP32](#131-esp32)
+  - [1.3. Methods ESP32](#13-methods-esp32)
     - [1.3.1.1. FreeRTOS Delta OTA](#1311-freertos-delta-ota)
     - [1.3.1.2 Espressif OTA](#1312-espressif-ota)
     - [1.3.1.3 Azure RTOS OTA](#1313-azure-rtos-ota)
     - [1.3.1.4  Web Updater Arduino IDE](#1314--web-updater-arduino-ide)
-    - [1.3.2. Embedded Linux](#132-embedded-linux)
+  - [1.4. Methods Embedded Linux](#14-methods-embedded-linux)
     - [1.3.2.1 Mender](#1321-mender)
     - [1.3.2.2 SWUpdate](#1322-swupdate)
-    - [1.3.2.3 JFrog](#1323-jfrog)
-  - [1.4. Conclusion](#14-conclusion)
-  - [1.5. Refs](#15-refs)
-  - [1.6. Footnote](#16-footnote)
+    - [1.3.2.3 JFrog Connect](#1323-jfrog-connect)
+    - [1.3.2.3 AWS IoT Greengrass OTA](#1323-aws-iot-greengrass-ota)
+    - [1.3.2.4 HawkBit](#1324-hawkbit)
+  - [1.5. Conclusion](#15-conclusion)
+  - [1.6. Refs](#16-refs)
+  - [1.7. Footnote](#17-footnote)
 
 # 1. Introduction
 
@@ -55,9 +56,7 @@ Writing pieces of software whenever needed.
   
 ---
 
-## 1.3. Methods Discovered
-
-### 1.3.1. ESP32
+## 1.3. Methods ESP32
 
 ---
 
@@ -65,11 +64,15 @@ Writing pieces of software whenever needed.
 <details>
   <summary></summary>
 
-  - Uses [AWS IoT AWS library](https://github.com/aws/ota-for-aws-iot-embedded-sdk)
+  - Easy to use with the [AWS IoT AWS library](https://github.com/aws/ota-for-aws-iot-embedded-sdk) but other OTA mechanism are also possible
   - Overview: 
   - Process:  
     ![Firmware update process](assets/imgs/firmware-update-process.png)
   - Advantages:
+    - Robust
+    - MIT licensed open source
+    - Great support for AWS IoT
+    - Possible to use with Azure IoT by using the Azure IoT middleware for FreeRTOS (https://github.com/Azure-Samples/iot-middleware-freertos-samples)
   - Disadvantages:
   - Conclusion:
   - [Demo](esp32/FreeRTOS/demo/README.md)
@@ -127,7 +130,7 @@ Writing pieces of software whenever needed.
 </details>
 
 
-### 1.3.2. Embedded Linux
+## 1.4. Methods Embedded Linux
 
 ---
 
@@ -136,9 +139,17 @@ Writing pieces of software whenever needed.
   <summary></summary>
   
   - Overview:
+    - Offers both a server and client to manage your devices, upload and manage software.
+    - Also offers an API for integration in other software 
   - Advantages:
+    - Can use the Azure IoT Hub
+    - Has both an active and passive rootfs (A/B partition), when device is rebooted it will try to start the newest software. If this fails it rolls back to the old one.
+    - Low downtime, only the reboot will cost some time.
+    - Has the option for partial updates so you don't have to download a full image every time nor reboot.
+    - Secure deployment using HTTPS polling, so no open ports
   - Disadvantages:
-  - Conclusion
+    - Two filesystems take up more storage space. 
+  - Conclusion:
   - [Demo]()
 </details>
 
@@ -153,7 +164,7 @@ Writing pieces of software whenever needed.
   - [Demo]()
 </details>
 
-### 1.3.2.3 [JFrog](https://jfrog.com/)
+### 1.3.2.3 [JFrog Connect](https://jfrog.com/)
 <details>
   <summary></summary>
   
@@ -163,16 +174,41 @@ Writing pieces of software whenever needed.
   - [Demo]()
 </details>
 
+### 1.3.2.3 [AWS IoT Greengrass OTA](https://docs.aws.amazon.com/greengrass/v1/developerguide/core-ota-update.html)
+<details>
+  <summary></summary>
+  
+  - Overview:
+  - Advantages:
+  - Disadvantages: 
+  - [Demo]()
+</details>
+
+
+
+### 1.3.2.4 [HawkBit](https://www.eclipse.org/hawkbit/)
+<details>
+  <summary></summary>
+  
+  - Overview:
+  - Advantages:
+  - Disadvantages:
+    - Part of eclipse IDE
+    - Only a server
+    - Development not as active anymore
+  - [Demo]()
+</details>
+
 ---
 
-## 1.4. Conclusion
+## 1.5. Conclusion
 
 ---
 
-## 1.5. Refs
+## 1.6. Refs
 
 ---
 
-## 1.6. Footnote
+## 1.7. Footnote
 
 ---
