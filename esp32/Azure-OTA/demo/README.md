@@ -1,0 +1,1 @@
+https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwiXgc6Oypn4AhXLm6QKHadxBsIQFnoECAQQAQ&url=https%3A%2F%2Fwww.st.com%2Fresource%2Fen%2Fuser_manual%2Fum2242-getting-started-with-microsoft-azure-iot-cloud-expansion-package-for-stm32cube-stmicroelectronics.pdf&usg=AOvVaw2rxZK4WgyHHHZtSRMp17QI
